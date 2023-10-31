@@ -11,7 +11,7 @@ class SymptomsDatabase {
 
   Future<Database> get database async {
     if (_database != null) return _database!;
-    print("CREATED DATABASE");
+    // print("CREATED DATABASE");
     _database = await _initDB('symptoms.db');
     return _database!;
   }
@@ -52,7 +52,7 @@ class SymptomsDatabase {
     final db = await instance.database;
 
     final id = await db.insert(tableSymptoms, symptom.toJson());
-    print(id);
+    // print(id);
     return symptom.copy(id: id);
   }
 

@@ -26,7 +26,7 @@ class _SymptomLoggerState extends State<SymptomLogger> {
 
   @override
   void initState() {
-    print(widget.symptoms.toString());
+    // print(widget.symptoms.toString());
     sList = {
       "nausea": Pair('Nausea', widget.symptoms!.nausea),
       "headache": Pair('Headache', widget.symptoms!.headache),

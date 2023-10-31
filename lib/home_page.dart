@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:camera/camera.dart';
+import 'package:contextmonitoringapplication/activity3.dart';
 import 'package:contextmonitoringapplication/database/symptom_db.dart';
 import 'package:contextmonitoringapplication/model/symptom.dart';
 import 'package:contextmonitoringapplication/symptom_logger.dart';
@@ -276,14 +277,28 @@ class _HomePageState extends State<HomePage> {
                             shortnessOfBreath: symptoms.shortnessOfBreath,
                             feelingTired: symptoms.feelingTired,
                           );
-                          print("Hello");
-                          print(tmp.toString());
                           await SymptomsDatabase.instance.create(tmp);
                         },
                       ),
                     ),
                   ),
                 ],
+              ),
+            ),
+            Expanded(
+              flex: 1,
+              child: Center(
+                child: ElevatedButton(
+                  child: const Text('Show activity 3'),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (builder) => const Activity3(),
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
           ],
